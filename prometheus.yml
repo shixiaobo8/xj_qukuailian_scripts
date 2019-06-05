@@ -1,0 +1,125 @@
+# my global config
+global:
+  scrape_interval:     60s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 60s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets: ['alertmanager.ztiao.club']
+    # - targets: ['localhost:9093']
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+   - "rules.d/*.rules"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: redis_exporter
+    static_configs:
+    - targets: ['IM-Cache-redis001:9121','IM-Cache-redis002:9121','IM-Cache-redis003:9121']
+  
+  # 关系链数据采集(每24h采集一次)
+  - job_name: 'buddy_data_collect'
+    metrics_path: '/metrics'
+    scrape_interval: 24h
+    static_configs:
+      - targets: ['monitor-grafana:31003']
+        labels:
+          service_name: "关系链数据采集"
+
+  
+  # 信息中心数据采集(每24h采集一次)
+  - job_name: 'msgcenter_data_collect'
+    metrics_path: '/metrics'
+    scrape_interval: 24h
+    static_configs:
+      - targets: ['monitor-grafana:31004']
+        labels:
+          service_name: "信息中心数据采集"
+  
+   # 用户中心数据采集(每1h采集一次)
+  - job_name: 'usercenter_data_collect'
+    metrics_path: '/metrics'
+    scrape_interval: 1h
+    static_configs:
+      - targets: ['monitor-grafana:31007']
+        labels:
+          service_name: "用户中心数据采集"
+   
+   # 会话服务数据采集(每1m采集一次)
+  - job_name: 'uss_data_collect'
+    metrics_path: '/metrics'
+    scrape_interval: 1m
+    static_configs:
+      - targets: ['monitor-grafana:31009']
+        labels:
+          service_name: "会话服务数据采集"
+  
+  - job_name: 'mysqld'
+    static_configs:
+    - targets: ['im-storage-mysql2:9104','im-storage-mysql1:9104']
+  - job_name: 'mongodb'
+    static_configs:
+    - targets: ['im-storage-mongo003:9001','im-storage-mongo002:9001','im-storage-mongo001:9001']
+  - job_name: 'linux_nodes'
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+    file_sd_configs:
+    - refresh_interval: 1m
+      files:
+      - /opt/prometheus/config.d/linux-nodes.json
+
+  - job_name: 'buddysys'
+    metrics_path: '/get/stat'
+    static_configs:
+      - targets: ['172.19.0.1:8088','172.19.0.2:8088']
+  
+  - job_name: 'usercenter'
+    metrics_path: '/get/stat'
+    static_configs:
+      - targets: ['172.19.0.9:8088','172.19.0.10:8088']
+        
+  - job_name: 'uss'
+    metrics_path: '/get/stat'
+    static_configs:
+      - targets: ['172.19.0.7:8088','172.19.0.8:8088']
+
+  - job_name: 'msgcenter'
+    metrics_path: '/get/stat'
+    static_configs:
+      - targets: ['172.19.0.5:8088','172.19.0.6:8088']
+  
+  - job_name: 'mediaproxy-push'
+    metrics_path: '/get/stat'
+    static_configs:
+      - targets: ['172.19.0.3:8088','172.19.0.4:8089','172.19.0.3:8088','172.19.0.3:8089']
+
+  - job_name: 'group'
+    metrics_path: '/get/stat'
+    static_configs:
+      - targets: ['172.19.0.251:8088','172.19.0.252:8088']
+
+  - job_name: 'regionv2'
+    metrics_path: '/get/stat'
+    static_configs:
+      - targets: ['172.19.0.249:8088','172.19.0.250:8088']
+
+  - job_name: 'region'
+    metrics_path: '/get/stat'
+    static_configs:
+      - targets: ['172.19.0.247:8088','172.19.0.248:8088']
+
+  - job_name: 'gateway'
+    metrics_path: '/get/stat'
+    static_configs:
+      - targets: ['172.19.0.245:8088','172.19.0.246:8088']
+  
+  - job_name: 'nav_upload'
+    metrics_path: '/get/stat'
+    static_configs:
+      - targets: ['172.19.0.244:8088','172.19.0.244:8089','172.19.0.243:8088','172.19.0.243:8088','172.19.0.243:8089']

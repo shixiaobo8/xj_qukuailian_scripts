@@ -1,0 +1,290 @@
+[
+  {
+    "targets": [ "linux-jumpserver:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "linux-jumpserver",
+      "instance": "linux-jumpserver"
+    }
+  },
+  {
+    "targets": [ "resmgr-nginx-php:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "resmgr-nginx-php",
+      "instance": "resmgr-nginx-php"
+    }
+  },
+  {
+    "targets": [ "resmgr-dps:9100:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "resmgr-dps",
+      "instance": "resmgr-dps:9100"
+    }
+  },
+  {
+    "targets": [ "usercenter002:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "usercenter",
+      "instance": "usercenter002"
+    }
+  },
+  {
+    "targets": [ "usercenter001:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "usercenter",
+      "instance": "usercenter001"
+    }
+  }, 
+  {
+    "targets": [ "usercenter001:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "usercenter",
+      "instance": "usercenter001"
+    }
+  }, 
+  {
+    "targets": [ "uss001:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "uss",
+      "instance": "uss001"
+    }
+  }, 
+  {
+    "targets": [ "uss002:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "uss",
+      "instance": "uss002"
+    }
+  }, 
+  {
+    "targets": [ "msgcenter001:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "msgcenter",
+      "instance": "usercenter001"
+    }
+  }, 
+  {
+    "targets": [ "msgcenter002:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "msgcenter",
+      "instance": "msgcenter002"
+    }
+  }, 
+  {
+    "targets": [ "mediaproxy-push001:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "mediaproxy-push",
+      "instance": "mediaproxy-push001"
+    }
+  }, 
+  {
+    "targets": [ "mediaproxy-push002:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "mediaproxy-push",
+      "instance": "mediaproxy-push002"
+    }
+  }, 
+  {
+    "targets": [ "buddy001:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "buddy",
+      "instance": "buddy001"
+    }
+  }, 
+  {
+    "targets": [ "buddy002:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "buddy",
+      "instance": "buddy001"
+    }
+  }, 
+  {
+    "targets": [ "group001:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "group",
+      "instance": "group001"
+    }
+  }, 
+  {
+    "targets": [ "group002:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "group",
+      "instance": "group002"
+    }
+  }, 
+  {
+    "targets": [ "regionv2001:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "regionv2",
+      "instance": "regionv2001"
+    }
+  }, 
+  {
+    "targets": [ "regionv2002:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "regionv2",
+      "instance": "regionv2002"
+    }
+  }, 
+  {
+    "targets": [ "region001:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "region",
+      "instance": "region001"
+    }
+  }, 
+  {
+    "targets": [ "region002:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "region",
+      "instance": "region002"
+    }
+  }, 
+  {
+    "targets": [ "gateway001:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "gateway",
+      "instance": "gateway001"
+    }
+  }, 
+  {
+    "targets": [ "gateway002:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "gateway",
+      "instance": "gateway002"
+    }
+  }, 
+  {
+    "targets": [ "nav_upload001:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "nav_upload",
+      "instance": "nav_upload001"
+    }
+  }, 
+  {
+    "targets": [ "nav_upload002:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "nav_upload",
+      "instance": "nav_upload002"
+    }
+  }, 
+  {
+    "targets": [ "nav_upload002:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "nav_upload",
+      "instance": "nav_upload002"
+    }
+  }, 
+  {
+    "targets": [ "linux-jumpserver:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "linux-jumpserver",
+      "instance": "linux-jumpserver"
+    }
+  }, 
+  {
+    "targets": [ "monitor-zabbix:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "monitor-zabbix",
+      "instance": "monitor-zabbix"
+    }
+  }, 
+  {
+    "targets": [ "monitor-grafana:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "monitor-grafana",
+      "instance": "monitor-grafana"
+    }
+  }, 
+  {
+    "targets": [ "monitor-prometheus:9100" ],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "monitor-prometheus",
+      "instance": "monitor-prometheus"
+    }
+  }, 
+  {
+    "targets": [ "IM-Cache-redis003:9100","IM-Cache-redis002:9100","IM-Cache-redis001:9100"],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "IM-Cache-redis",
+      "instance": "IM-Cache-redis"
+    }
+  }, 
+  {
+    "targets": [ "IM-Storage-mongo003:9100","IM-Storage-mongo002:9100","IM-Storage-mongo001:9100"],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "IM-Storage-mongo",
+      "instance": "IM-Storage-mongo"
+    }
+  }, 
+  {
+    "targets": [ "IM-Storage-mysql1:9100","IM-Storage-mysql2:9100"],
+    "labels": {
+      "env": "product",
+      "job": "linux-nodes",
+      "group": "IM-Storage-mysql",
+      "instance": "IM-Storage-mysql"
+    }
+  }, 
+]
