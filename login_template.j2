@@ -1,0 +1,28 @@
+#!/bin/bash
+# 用户  {{ username }} 的服务器登陆脚本
+
+# 主函数入口
+while :
+do
+	cat /etc/.logininfo_{{ username }}
+	echo -e ""
+	echo -e "\033[34m 提示:1.按ctrl+c 结束本程序,即可登陆到linux跳板机本身 \033[0m"
+	echo -e "\033[34m      2.从跳板机返回此界面,请执行命令: login_{{ username }} \033[0m"
+	echo -e "\033[34m      3.输入服务器编号,即可登陆到上述对应的服务器 \033[0m"
+	read -p "请输入服务器编号:" server_id
+	echo -e ""
+	case $server_id in
+	{% for	service in user_hosts %}
+		{% for host in service.hosts %}
+		{{ host.ip_id }})
+			# 连接服务器
+			ssh root@{{ host.ip }}
+			;;
+		{% endfor %}
+	{% endfor %}
+	*)
+	echo -e "\033[41;33m 输入的服务器编号不存在!!    2秒后请重新输入\033[0m"
+	sleep 2
+	;;
+	esac
+done

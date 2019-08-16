@@ -1,0 +1,11 @@
+{{ username }},你好现有可登录服务器可登陆列表如下:
+
+(对应服务)服务器编号	---->	服务器域名	---->	对应ip
+----------------------------------------------------------------------------------------------
+
+{% for service in user_hosts %}{{ service.service_detail }} {{ service.service_name }}:
+{% for host in service.hosts %}{{ host.ip_id }}		---->	{{ host.hostname }}	---->	{{ host.ip }}
+{% endfor %}
+{% endfor %}
+
+

@@ -1,0 +1,36 @@
+#!/bin/bash
+# 用户  {{ username }} 的服务器登陆脚本
+# 生成ssh key
+password={{ root_pwd }}
+if [ ! -f ~/.ssh/id_rsa ];then
+	yes | ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+fi
+
+# 添加ssh 互信
+add_ssh_key(){
+	{% for	service in user_hosts %}
+		{% for host in service.hosts %}
+			expect <<-EOF
+			    set timeout 5
+			    spawn ssh-copy-id -f -i root@{{ host.ip }}
+			    expect {
+			    "yes/no" { send "yes\n";exp_continue }
+			    "password:" { send "$password\n" }
+			    }
+			  interact
+			  expect eof
+			EOF
+			expect <<-EOF
+			    set timeout 5
+			    spawn ssh-copy-id -f -i root@{{ host.hostname }}
+			    expect {
+			    "yes/no" { send "yes\n";exp_continue }
+			    "password:" { send "$password\n" }
+			    }
+			  interact
+			  expect eof
+			EOF
+		{% endfor %}
+	{% endfor %}
+}
+add_ssh_key > /dev/null 2&>1
