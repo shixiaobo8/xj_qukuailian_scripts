@@ -9,9 +9,9 @@ import random
 import datetime
 
 mysql_root = 'root'
-mysql_pwd = 'xj@yunwei123'
+mysql_pwd = 'xxxxxxxxxxxxxxxxxxxxxx'
 mysql_host = 'localhost'
-mysql_db = 'xj_omsa'
+mysql_db = 'xxxxxxxxxxxxxxxxxxxx'
 users_hosts = dict()
 services_hosts = []
 
